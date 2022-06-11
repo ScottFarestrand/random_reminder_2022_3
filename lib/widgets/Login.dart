@@ -32,7 +32,11 @@ class Login extends StatelessWidget {
               TextFormField(
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(labelText: "Email Address"),
+                decoration: InputDecoration(
+                    labelText: "Email Address",
+                    labelStyle: TextStyle(fontStyle: FontStyle.italic),
+                ),
+                style: TextStyle(fontSize: 20),
                 validator: (value) {
                   if ( RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value.toString()) ) {
                     return null;
@@ -44,7 +48,11 @@ class Login extends StatelessWidget {
                 controller: passwordController,
                   keyboardType: TextInputType.text,
                   obscureText: true,
-                  decoration: InputDecoration(labelText: "Password"),
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                    labelStyle: TextStyle(fontStyle: FontStyle.italic),
+                  ),
+                  style: TextStyle(fontSize: 20),
                   validator: (value) {
 
                     bool numFound =  RegExp(r".*[0-9].*").hasMatch(value.toString());
